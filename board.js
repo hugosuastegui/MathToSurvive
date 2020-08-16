@@ -48,3 +48,24 @@ class Path extends Background{
 
 }
 
+// Dibujar recuadros playboard
+function drawPlayboard(){
+    // Dibujar rectángulos de numeros
+    // Starter
+    ctx.fillStyle = "white"
+    ctx.rect(250, 25, 50, 30)
+    ctx.stroke()
+    // Operador actual
+    ctx.fillStyle = "white"
+    ctx.rect(320, 25, 50, 30)
+    ctx.stroke()
+    // Resultado
+    ctx.fillStyle = "white"
+    ctx.rect(390, 20, 60, 40)
+    ctx.stroke()
+    ctx.fillRect(390, 20, 60, 40)
+    // Operador próximo
+    ctx.fillStyle = "white"
+    ctx.rect(470, 25, 50, 30)
+    ctx.stroke()
+}

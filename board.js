@@ -1,5 +1,5 @@
 // Board.js contiene la clases del fondo del canvas
-
+// Static background
 class Background{
     constructor(img, x, y, width, height){
         this.x = 0
@@ -18,7 +18,7 @@ class Background{
     }
     
 }
-
+// Dynamic path
 class Path extends Background{
     constructor(img, x, y, width, height){
         super(width)
@@ -33,16 +33,18 @@ class Path extends Background{
     }
     
     draw(){
-        this.x--
-        if(this.x < -$canvas.width)this.x = 0
+        // Fix replication issue with path 
+        // this.x--
+        // if(this.x < -$canvas.width)this.x = 0
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-        ctx.drawImage(
-            this.img,
-            this.x + $canvas.width,
-            this.y,
-            this.width,
-            this.height
-        )
+        // ctx.drawImage(
+        //     this.img,
+        //     this.x + $canvas.width,
+        //     this.y,
+        //     this.width,
+        //     this.height
+        // )
     }
 
 }
+

@@ -34,14 +34,14 @@ function toggleByOperand(operand, level){
                 y = Math.floor(Math.random()*(level-1)+1)
             }
             result = x0 + y
-            return [x0, y, operandString, result]
+            return [x0, operandString, y, result]
             break
         case 2:
             operandString = '-'
             x0 = Math.floor(Math.random()*(level-1)+1)
             y = Math.floor(Math.random()*x0 + 1) 
             result = x0 - y
-            return [x0, y, operandString, result]
+            return [x0, operandString, y, result]
             break
         case 3:
             operandString = '*'
@@ -51,17 +51,17 @@ function toggleByOperand(operand, level){
                 y = Math.floor(Math.random()*(level-2)+2)
             }
             result = x0 * y
-            return [x0, y, operandString, result]
+            return [x0, operandString, y, result]
             break
         case 4: 
             operandString = '/'
             x0 = Math.floor(Math.random()*(level-1)+1)
             y = Math.floor(Math.random()*(level-1)+1)
-            while(y%level != 0){
+            while(x0%y != 0){
                 y = Math.floor(Math.random()*level-1+1)
             }
             result = x0 / y
-            return [x0, y, operandString, result]
+            return [x0, operandString, y, result]
             break
     }
 }

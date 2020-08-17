@@ -5,22 +5,32 @@ function getRandomNumbers(level){
     switch(level){
         case 1:
             // Result can't be higher than 100, addition
-            operand = Math.floor(Math.random()*1+1)
-            return toggleByOperand(operand, 100)
+            console.log("En nivel 1")
+            if(fuelOn === true){
+                fuelOn = false
+                console.log("Fuel On activado")
+                operand = Math.floor(Math.random()*1+1)
+                return toggleByOperand(operand, 100)
+            }
+            break
         case 2:
             // Result can't be higher than 300, addition
             operand = Math.floor(Math.random()*1+1)
             return toggleByOperand(operand, 300)
+            break
         case 3:
             // Result can't be higher than 500, addition and multiplication
             operand = Math.floor(Math.random()*3+1)
             return toggleByOperand(operand, 500)
+            break
         case 4: 
             // Result can't be higher than 1000, addition and multiplication
             operand = Math.floor(Math.random()*3+1)
             return toggleByOperand(operand, 1000)
+            break
         default:
             return 'Please select a correct level'
+            break
     }
 }
 
@@ -65,3 +75,20 @@ function toggleByOperand(operand, level){
             break
     }
 }
+
+document.addEventListener('keydown', e => {
+    // Checar si se gana o se pierde
+    if(e.keyCode === 9){
+        if(parseInt(userInput.join('')) === ans){
+            userInput = []
+            fuelOn = true
+            console.log("ganaste")
+        }else {
+            console.log("Intenta de nuevo")
+        }
+    }
+    // Si se llega a tener más de cuatro numeros en el input se toma como una mala
+    if(userInput.length > 4) userInput = []
+    if(e.keyCode > 48 || e.keyCode < 57)
+    userInput.push(e.key)
+})

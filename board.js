@@ -52,20 +52,16 @@ class Path extends Background{
 function drawPlayboard(){
     // Dibujar rectángulos de numeros
     // Starter
+    ctx.font = "30px Sans-serif"
     ctx.fillStyle = "white"
-    ctx.rect(250, 25, 50, 30)
-    ctx.stroke()
+    ctx.fillText(`${x0}`, 220, 50)
     // Operador actual
+    ctx.font = "30px Sans-serif"
     ctx.fillStyle = "white"
-    ctx.rect(320, 25, 50, 30)
-    ctx.stroke()
-    // Resultado
+    ctx.fillText(`${operandString} ${y}`, 280, 50)
+    // Marco del resultado
     ctx.fillStyle = "white"
-    ctx.rect(390, 20, 60, 40)
+    ctx.rect(370, 20, 60, 40)
     ctx.stroke()
-    ctx.fillRect(390, 20, 60, 40)
-    // Operador próximo
-    ctx.fillStyle = "white"
-    ctx.rect(470, 25, 50, 30)
-    ctx.stroke()
+    ctx.fillRect(370, 20, 60, 40)
 }

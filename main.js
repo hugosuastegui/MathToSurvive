@@ -2,10 +2,11 @@
 const background = new Background()
 const path = new Path()
 const player = new Character()
+const com = new Computer()
 
 $startButton.addEventListener('click', e => {
     // Set interval
-    setInterval(update, 1000/2)
+    setInterval(update, 1000/60)
 })
 
 function update(){
@@ -15,8 +16,11 @@ function update(){
     clearCanvas()
     background.draw()
     path.draw()
-    player.draw()
+    player.draw("white")
+    com.draw("black")
     drawPlayboard()
+    drawCountdown()
+    drawScore()
     getRandomNumbers(1)
 }
 

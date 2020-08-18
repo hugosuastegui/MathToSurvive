@@ -6,10 +6,13 @@ const com = new Computer()
 
 $startButton.addEventListener('click', e => {
     // Set interval
-    let x = document.querySelector("#level").selectedIndex
-    level = x + 1
-    console.log(level)
-    intervalId = setInterval(update, 1000/60)
+    if(start === true){
+        start = false
+        let x = document.querySelector("#level").selectedIndex
+        level = x + 1
+        console.log(level)
+        intervalId = setInterval(update, 1000/60)
+    }
 })
 
 function update(){
@@ -41,5 +44,5 @@ function clearCanvas(){
 
 document.addEventListener('keydown', e => {
     checkIfNumber(e)
-    checkAnswer(e, com)
+    checkAnswer(e, com, p1)
 })

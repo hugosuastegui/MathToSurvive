@@ -3,7 +3,7 @@ class Character{
     constructor(){
         this.width = 30
         this.height = 30
-        this.x = (700 - this.width/2)
+        this.x = (750 - this.width/2)
         this.y = 300
         // this.img = new Image()
         // this.img.src = ''

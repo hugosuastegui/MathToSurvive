@@ -91,7 +91,7 @@ function checkIfNumber(e){
 }
 
 // Función para checar si el resultado es el correcto, pasar el resultado a x0, mover los personajes, camiar el score, resetear tiempo y valor de y
-function checkAnswer(e, computer){
+function checkAnswer(e, computer, player){
     if(e.keyCode === 32){
         let userInputNumber = parseInt(userInput.join(''))
         switch(operandString){
@@ -105,7 +105,8 @@ function checkAnswer(e, computer){
                     getRandomNumbers(level)
                 }else{
                     userInput = []
-                    computer.x+=50
+                    computer.x+=25
+                    player.x-=25
                     timeLeft = timeToSolve
                 }
                 break
@@ -119,7 +120,8 @@ function checkAnswer(e, computer){
                     getRandomNumbers(level)
                 }else{
                     userInput = []
-                    computer.x+=50
+                    computer.x+=25
+                    player.x-=25
                     timeLeft = timeToSolve
                 }
                 break
@@ -133,7 +135,8 @@ function checkAnswer(e, computer){
                     getRandomNumbers(level)
                 }else{
                     userInput = []
-                    computer.x+=50
+                    computer.x+=25
+                    player.x-=25
                     timeLeft = timeToSolve
                 }
                 break
@@ -147,7 +150,8 @@ function checkAnswer(e, computer){
                     getRandomNumbers(level)
                 }else{
                     userInput = []
-                    computer.x+=50
+                    computer.x+=25
+                    player.x-=25
                     timeLeft = timeToSolve
                 }
                 break

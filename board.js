@@ -61,9 +61,9 @@ function drawPlayboard(){
     ctx.fillText(`${operandString} ${y} =`, 280, 50)
     // Marco del resultado
     ctx.fillStyle = "white"
-    ctx.rect(380, 20, 80, 40)
+    ctx.rect(390, 20, 80, 40)
     ctx.stroke()
-    ctx.fillRect(380, 20, 80, 40)
+    ctx.fillRect(390, 20, 80, 40)
 }
 
 // Dibujar contador de tiempo
@@ -75,7 +75,7 @@ function drawCountdown(){
     // Display del tiempo restante (countdowm)
     ctx.font = "20px Sans-serif"
     ctx.fillStyle = "black"
-    ctx.fillText(`${timeLeft}`, 700, 50)
+    ctx.fillText(`${timeLeft}`, 730, 50)
 }
 
 // Dibujar score
@@ -99,5 +99,5 @@ function writeUserInput(index){
     let inputNumber =  userInput[index]
     ctx.font = "30px Sans-serif"
     ctx.fillStyle = "black"
-    ctx.fillText(`${inputNumber}`, 383 + (18*index), 50)
+    ctx.fillText(`${inputNumber}`, 394 + (18*index), 50)
  }

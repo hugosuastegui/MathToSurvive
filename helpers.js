@@ -5,10 +5,8 @@ function getRandomNumbers(level){
     switch(level){
         case 1:
             // Result can't be higher than 100, addition
-            console.log("En nivel 1")
             if(fuelOn === true){
                 fuelOn = false
-                console.log("Fuel On activado")
                 operand = Math.floor(Math.random()*1+1)
                 return toggleByOperand(operand, 100)
             }
@@ -81,5 +79,62 @@ function checkIfNumber(e){
     if(e.keyCode > 47 && e.keyCode < 59){
         let index = 0
         userInput.push(e.key)
+    }
+}
+
+// Función para checar si el resultado es el correcto, pasar el resultado a x0, mover los personajes, camiar el score, resetear tiempo y valor de y
+function checkAnswer(e, computer){
+    if(e.keyCode === 32){
+        let userInputNumber = parseInt(userInput.join(''))
+        switch(operandString){
+            case '+':
+                ans = x0 + y
+                if(ans === userInputNumber){
+                    score++
+                    userInput = []
+                    timeLeft = timeToSolve
+                }else{
+                    userInput = []
+                    computer.x+=50
+                    timeLeft = timeToSolve
+                }
+                break
+            case '-':
+                ans = x0 - y
+                if(ans === userInputNumber){
+                    score++
+                    userInput = []
+                    timeLeft = timeToSolve
+                }else{
+                    userInput = []
+                    computer.x+=50
+                    timeLeft = timeToSolve
+                }
+                break
+            case '*':
+                ans = x0 * y
+                if(ans === userInputNumber){
+                    score++
+                    userInput = []
+                    timeLeft = timeToSolve
+                }else{
+                    userInput = []
+                    computer.x+=50
+                    timeLeft = timeToSolve
+                }
+                break
+            case '/':
+                ans = x0 / y
+                if(ans === userInputNumber){
+                    score++
+                    userInput = []
+                    timeLeft = timeToSolve
+                }else{
+                    userInput = []
+                    computer.x+=50
+                    timeLeft = timeToSolve
+                }
+                break
+        }
     }
 }

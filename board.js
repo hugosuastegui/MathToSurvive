@@ -69,7 +69,9 @@ function drawPlayboard(){
 // Dibujar contador de tiempo
 function drawCountdown(){
     // Definir el comienzo del contador y la velocidad de avance
-    timeLeft = (timeToSolve - frames/90).toFixed(2)
+    if(frames%90 === 0){
+        timeLeft--
+    }
     // Display del tiempo restante (countdowm)
     ctx.font = "20px Sans-serif"
     ctx.fillStyle = "black"

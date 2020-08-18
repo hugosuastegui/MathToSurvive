@@ -142,7 +142,25 @@ function checkAnswer(e, computer){
                     timeLeft = timeToSolve
                 }
                 break
+            }
         }
+}
+
+// Función para ejecutar gameOver
+function gameOver(player, computer){
+    if(player.x === computer.x){
+        drawGameOver()
+        clearInterval(intervalId)
     }
 }
+
+// Función que determine si el tiempo se acabo
+function timeOut(time, computer){
+    if(time === 0){
+        userInput = []
+        computer.x+=50
+        timeLeft = timeToSolve 
+    }
+}
+
 

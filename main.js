@@ -1,12 +1,12 @@
 // Main.js contiene las funciones independientes
 const background = new Background()
 const path = new Path()
-const player = new Character()
+const p1 = new Character()
 const com = new Computer()
 
 $startButton.addEventListener('click', e => {
     // Set interval
-    setInterval(update, 1000/60)
+    intervalId = setInterval(update, 1000/60)
 })
 
 function update(){
@@ -15,7 +15,7 @@ function update(){
     clearCanvas()
     background.draw()
     path.draw()
-    player.draw("white")
+    p1.draw("white")
     com.draw("black")
     drawPlayboard()
     while (index < userInput.length){
@@ -23,6 +23,8 @@ function update(){
         index++
     }
     drawCountdown()
+    timeOut(timeLeft, com)
+    gameOver(p1, com)
     drawScore()
     // EL 1 es el nivel hardcoded que hay que cambiar por el user input del DOM manipulation
     getRandomNumbers(level)

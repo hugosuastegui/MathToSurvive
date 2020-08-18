@@ -61,9 +61,9 @@ function drawPlayboard(){
     ctx.fillText(`${operandString} ${y} =`, 280, 50)
     // Marco del resultado
     ctx.fillStyle = "white"
-    ctx.rect(370, 20, 60, 40)
+    ctx.rect(380, 20, 80, 40)
     ctx.stroke()
-    ctx.fillRect(370, 20, 60, 40)
+    ctx.fillRect(380, 20, 80, 40)
 }
 
 // Dibujar contador de tiempo
@@ -84,6 +84,18 @@ function drawScore(){
 }
 
 // Dibujar Game Over
-// function gameOver(){
-//     if()
-// }
+function drawGameOver(){
+    ctx.font = "60px Sans-serif"
+    ctx.fillStyle = "crimson"
+    ctx.fillText('Game Over', 245, 190)
+    ctx.font = "40px Sans-serif"
+    ctx.fillText(`Score: ${score}`, 330, 250)
+}
+
+// Funcion que escriba el numero del user input
+function writeUserInput(index){
+    let inputNumber =  userInput[index]
+    ctx.font = "30px Sans-serif"
+    ctx.fillStyle = "black"
+    ctx.fillText(`${inputNumber}`, 383 + (18*index), 50)
+ }

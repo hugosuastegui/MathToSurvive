@@ -1,4 +1,4 @@
-// helpers.js contiene la funcionalidad de las teclas (key) así como demás event listeners
+// helpers.js contiene las funciones auxiliares de main.js
 
 // Get random numbers according to the specified level (level 1 for now)
 function getRandomNumbers(level){
@@ -76,19 +76,10 @@ function toggleByOperand(operand, level){
     }
 }
 
-document.addEventListener('keydown', e => {
-    // Checar si se gana o se pierde
-    if(e.keyCode === 9){
-        if(parseInt(userInput.join('')) === ans){
-            userInput = []
-            fuelOn = true
-            console.log("ganaste")
-        }else {
-            console.log("Intenta de nuevo")
-        }
+// Funcion para saber si lo que se tecleo fue un número
+function checkIfNumber(e){
+    if(e.keyCode > 47 && e.keyCode < 59){
+        let index = 0
+        userInput.push(e.key)
     }
-    // Si se llega a tener más de cuatro numeros en el input se toma como una mala
-    if(userInput.length > 4) userInput = []
-    if(e.keyCode > 48 || e.keyCode < 57)
-    userInput.push(e.key)
-})
+}

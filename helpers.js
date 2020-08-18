@@ -77,7 +77,6 @@ function toggleByOperand(operand, level){
 // Funcion para saber si lo que se tecleo fue un número
 function checkIfNumber(e){
     if(e.keyCode > 47 && e.keyCode < 59){
-        let index = 0
         userInput.push(e.key)
     }
 }
@@ -93,6 +92,8 @@ function checkAnswer(e, computer){
                     score++
                     userInput = []
                     timeLeft = timeToSolve
+                    fuelOn = true
+                    getRandomNumbers(level)
                 }else{
                     userInput = []
                     computer.x+=50
@@ -105,6 +106,8 @@ function checkAnswer(e, computer){
                     score++
                     userInput = []
                     timeLeft = timeToSolve
+                    fuelOn = true
+                    getRandomNumbers(level)
                 }else{
                     userInput = []
                     computer.x+=50
@@ -117,6 +120,8 @@ function checkAnswer(e, computer){
                     score++
                     userInput = []
                     timeLeft = timeToSolve
+                    fuelOn = true
+                    getRandomNumbers(level)
                 }else{
                     userInput = []
                     computer.x+=50
@@ -129,6 +134,8 @@ function checkAnswer(e, computer){
                     score++
                     userInput = []
                     timeLeft = timeToSolve
+                    fuelOn = true
+                    getRandomNumbers(level)
                 }else{
                     userInput = []
                     computer.x+=50
@@ -138,3 +145,4 @@ function checkAnswer(e, computer){
         }
     }
 }
+

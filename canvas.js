@@ -15,4 +15,5 @@ timeLeft = 10,
 ans = 0,
 userInput = [],
 fuelOn = true,
-score = 0
+score = 0, 
+level = 1

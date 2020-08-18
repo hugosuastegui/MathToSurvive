@@ -24,7 +24,8 @@ function update(){
     }
     drawCountdown()
     drawScore()
-    getRandomNumbers(1)
+    // EL 1 es el nivel hardcoded que hay que cambiar por el user input del DOM manipulation
+    getRandomNumbers(level)
     // drawGameOver()
 }
 

@@ -13,18 +13,27 @@ function getRandomNumbers(level){
             break
         case 2:
             // Result can't be higher than 300, addition
-            operand = Math.floor(Math.random()*1+1)
-            return toggleByOperand(operand, 300)
+            if(fuelOn === true){
+                fuelOn = false
+                operand = Math.floor(Math.random()*1+1)
+                return toggleByOperand(operand, 300)
+            }
             break
         case 3:
             // Result can't be higher than 500, addition and multiplication
-            operand = Math.floor(Math.random()*3+1)
-            return toggleByOperand(operand, 500)
+            if(fuelOn === true){
+                fuelOn = false
+                operand = Math.floor(Math.random()*3+1)
+                return toggleByOperand(operand, 500)
+            }
             break
         case 4: 
             // Result can't be higher than 1000, addition and multiplication
-            operand = Math.floor(Math.random()*3+1)
-            return toggleByOperand(operand, 1000)
+            if(fuelOn === true){
+                fuelOn = false
+                operand = Math.floor(Math.random()*3+1)
+                return toggleByOperand(operand, 1000)
+            }
             break
         default:
             return 'Please select a correct level'

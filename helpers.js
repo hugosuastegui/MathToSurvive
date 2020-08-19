@@ -161,18 +161,31 @@ function checkAnswer(e, computer, player){
 
 // Función para ejecutar gameOver
 function gameOver(player, computer){
-    if(player.x === computer.x){
+    if(player.x < computer.x){
         drawGameOver()
         clearInterval(intervalId)
     }
 }
 
 // Función que determine si el tiempo se acabo
-function timeOut(time, computer){
+function timeOut(time, computer, player){
     if(time === 0){
         userInput = []
         computer.x+=50
+        player.x-=50
         timeLeft = timeToSolve 
+    }
+}
+
+// Función para animaciones de los sprite
+function spriteAnimation(frames, toggle, computer, player){
+    if(frames % 26 === 0){
+        computer.sx = computer.sx * toggle
+        player.sx = player.sx * toggle
+        toggle++
+        if(toggle >= 15){
+            toggle = 2
+        }
     }
 }
 

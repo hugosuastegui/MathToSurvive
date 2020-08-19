@@ -21,7 +21,7 @@ function update(){
     clearCanvas()
     background.draw()
     path.draw()
-    p1.draw("white")
+    p1.draw()
     com.draw("black")
     drawPlayboard()
     while (index < userInput.length){
@@ -29,12 +29,10 @@ function update(){
         index++
     }
     drawCountdown()
-    timeOut(timeLeft, com)
+    timeOut(timeLeft, com, p1)
     gameOver(p1, com)
     drawScore()
-    // EL 1 es el nivel hardcoded que hay que cambiar por el user input del DOM manipulation
     getRandomNumbers(level)
-    // drawGameOver()
 }
 
 function clearCanvas(){

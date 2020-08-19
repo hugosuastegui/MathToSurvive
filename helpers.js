@@ -178,14 +178,15 @@ function timeOut(time, computer, player){
 }
 
 // Función para animaciones de los sprite
-function spriteAnimation(frames, toggle, computer, player){
+function spriteAnimation(frames, computer, player){
     if(frames % 26 === 0){
-        computer.sx = computer.sx * toggle
-        player.sx = player.sx * toggle
-        toggle++
-        if(toggle >= 15){
-            toggle = 2
-        }
+        computer.sx = computer.swidth * toggleAnimation
+        player.sx = player.sx * toggleAnimation
+        toggleAnimation++
+        console.log(computer.sx)
+    }
+    if(toggleAnimation >= 15){
+        toggleAnimation = 2
     }
 }
 

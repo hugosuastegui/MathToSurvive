@@ -10,7 +10,6 @@ $startButton.addEventListener('click', e => {
         start = false
         let x = document.querySelector("#level").selectedIndex
         level = x + 1
-        console.log(level)
         intervalId = setInterval(update, 1000/60)
     }
 })
@@ -33,6 +32,7 @@ function update(){
     gameOver(p1, com)
     drawScore()
     getRandomNumbers(level)
+    spriteAnimation(frames, com, p1)
 }
 
 function clearCanvas(){

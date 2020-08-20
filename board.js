@@ -34,7 +34,7 @@ class Path extends Background{
     
     draw(){
         // Fix replication issue with path 
-        this.x-=2
+        this.x-=3
         if(this.x < -$canvas.width)this.x = 0
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
         ctx.drawImage(

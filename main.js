@@ -1,18 +1,20 @@
 // Main.js contiene las funciones independientes
-const background = new Background()
-const path = new Path()
-const p1 = new Character()
-const com = new Computer()
 
 $startButton.addEventListener('click', e => {
     // Set interval
     if(start === true){
         start = false
-        let x = document.querySelector("#level").selectedIndex
-        level = x + 1
+        level = document.querySelector("#level").selectedIndex +1
+        gender = document.querySelector("#gender").selectedIndex
         intervalId = setInterval(update, 1000/60)
     }
 })
+
+
+const background = new Background()
+const path = new Path()
+const p1 = new Character()
+const com = new Computer()
 
 function update(){
     frames++

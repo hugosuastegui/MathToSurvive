@@ -19,4 +19,5 @@ userInput = [],
 fuelOn = true,
 score = 0, 
 level = 1,
-toggleAnimation = 2
+toggleAnimation = 1,
+gender

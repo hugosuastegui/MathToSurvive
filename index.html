@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathToSurvive</title>
+    <title>Math To Survive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="welcome">
-        <h1>Math To Survive</h1>
-        <p>Solve the artithmetic to escape the orc!</p>
+        <img id="logo" src="images/math-to-survive-logo.png" alt="Math to Survive">
+        <p>Resuleve los ejercicios antes de que te alcance el Orco</p>
     </div>
     <div class="playground">
         <canvas width="800" height="400" style="border: 1px solid black"></canvas>
     </div>
     <div class="menu">
-        <div>
-            <h3>INSTRUCTIONS:</h3>
-            <p>Type Spacebar to submit answer before time reaches 0</p>
+        <div id="instructions">
+            <strong>INSTRUCCIONES:</strong>
+            <p>Resuelve el ejercicio y presiona la barra de espacio !antes de que se te acabe el tiempo!</p>
         </div>
-        <div class="levels">
-            <label for="level">Select level to play</label>
+        <div id="genre-selection">
+            <label for="gender"><strong>Jugar como niño o niña</strong></label>
+            <br>
+            <select id="gender">
+                <option value="boy" selected>Niño</option>
+                <option value="girl">Niña</option>
+            </select>
+        </div>
+        <div id="levels">
+            <label for="level"><strong>Selecciona el nivel:</strong></label>
+            <br>
             <select id="level">
-                <option value="1" selected>Level 1: Up to 100</option>
-                <option value="2">Level 2: Up to 300</option>
-                <option value="3">Level 3: Up to 500</option>
-                <option value="4">Level 4: Up to 1000</option>
+                <option value="1" selected>Nivel 1: Hasta 100 (solo +/-)</option>
+                <option value="2">Nivel 2: Hasta 300 (solo +/-)</option>
+                <option value="3">Nivel 3: Hasta 500</option>
+                <option value="4">Nivel 4: Hasta 1000</option>
 			</select>
 		</div>
 		<div>
-            <button class=start-button>Start Game!</button>
+            <button class=start-button>¡Comenzar!</button>
 		</div>
     </div>
     <script src="canvas.js"></script>

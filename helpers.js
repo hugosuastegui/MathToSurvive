@@ -161,7 +161,7 @@ function checkAnswer(e, computer, player){
 
 // Función para ejecutar gameOver
 function gameOver(player, computer){
-    if(player.x < computer.x){
+    if((player.x - player.swidth)< computer.x){
         drawGameOver()
         clearInterval(intervalId)
     }
@@ -179,14 +179,13 @@ function timeOut(time, computer, player){
 
 // Función para animaciones de los sprite
 function spriteAnimation(frames, computer, player){
-    if(frames % 26 === 0){
+    if(frames % 18 === 0){
         computer.sx = computer.swidth * toggleAnimation
-        player.sx = player.sx * toggleAnimation
+        player.sx = player.swidth * toggleAnimation
         toggleAnimation++
-        console.log(computer.sx)
     }
-    if(toggleAnimation >= 15){
-        toggleAnimation = 2
+    if(toggleAnimation === 5){
+        toggleAnimation = 1
     }
 }
 

@@ -44,5 +44,6 @@ function clearCanvas(){
 
 document.addEventListener('keydown', e => {
     checkIfNumber(e)
+    checkIfDelete(e)
     checkAnswer(e, com, p1)
 })

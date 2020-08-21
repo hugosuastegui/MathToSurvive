@@ -189,4 +189,10 @@ function spriteAnimation(frames, computer, player){
     }
 }
 
+function checkIfDelete(e){
+    if(e.keyCode === 8 && userInput.length > 0){
+        userInput.pop()
+    }
+}
+
 
